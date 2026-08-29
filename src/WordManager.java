@@ -3,8 +3,8 @@ public class WordManager {
     private int totalLines;
     private int totalWords;
 
-    private int longestWordsTotCharacters= 0;
-    private String longestWords;
+    private int longestWordsTotCharacters = 0;
+    private String longestWords = "You didn't enter anything!";
 
 
     public WordManager() {
@@ -13,10 +13,12 @@ public class WordManager {
     public boolean isStop(String userInput) {
         boolean stop = true;
 
-        if (!userInput.equalsIgnoreCase("stop")){
+        if (!userInput.equalsIgnoreCase("stop")) {
             totalLines++;
-            characterCounter(userInput);
-            wordCounter(userInput);
+            if (!userInput.isEmpty()) {
+                characterCounter(userInput);
+                wordCounter(userInput);
+            }
             stop = false;
         }
 
@@ -36,7 +38,7 @@ public class WordManager {
     }
 
     public void wordCounter(String userInput) {
-        String [] arrayWithWords = userInput.trim().split("\\s+");
+        String[] arrayWithWords = userInput.trim().split("\\s+");
         totalWords += arrayWithWords.length;
         longestWords(arrayWithWords);
     }
@@ -45,13 +47,13 @@ public class WordManager {
         return totalWords;
     }
 
-    public void longestWords(String [] arrayWithWords) {
-        for (String currentWord : arrayWithWords){
-            if (currentWord.length() > longestWordsTotCharacters){
+    public void longestWords(String[] arrayWithWords) {
+        for (String currentWord : arrayWithWords) {
+            if (currentWord.length() > longestWordsTotCharacters) {
                 longestWordsTotCharacters = currentWord.length();
-                longestWords = currentWord;
-            }else if (currentWord.length() == longestWordsTotCharacters){
-                longestWords = longestWords +  ", " + currentWord.toLowerCase();
+                longestWords = "\"" + currentWord.toLowerCase() + "\"";
+            } else if (currentWord.length() == longestWordsTotCharacters && !currentWord.isEmpty()) {
+                longestWords = longestWords + ", " + "\"" + currentWord.toLowerCase() + "\"";
             }
         }
     }
