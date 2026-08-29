@@ -1,9 +1,10 @@
 import org.junit.jupiter.api.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class TestWordManager {
     @Test
-    public void testLineCounter(){
+    public void testLineCounter() {
         //Arrange
         WordManager wordManager = new WordManager();
         int expected = 5;
@@ -21,7 +22,7 @@ public class TestWordManager {
     }
 
     @Test
-    public void testCharacterCounter(){
+    public void testCharacterCounter() {
         //Arrange
         WordManager wordManager = new WordManager();
         int expected = 9;
@@ -35,7 +36,7 @@ public class TestWordManager {
     }
 
     @Test
-    public void testWordCounter(){
+    public void testWordCounter() {
         //Arrange
         WordManager wordManager = new WordManager();
         int expected = 3;
@@ -48,8 +49,8 @@ public class TestWordManager {
         assertEquals(expected, actual);
     }
 
-   @Test
-    public void testLongestWord(){
+    @Test
+    public void testLongestWord() {
         //Arrange
         WordManager wordManager = new WordManager();
         String expected = "attention, softaware";
