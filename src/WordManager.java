@@ -3,8 +3,8 @@ public class WordManager {
     private int totalLines;
     private int totalWords;
 
+    private int longestWordsTotCharacters= 0;
     private String longestWords;
-    private int longestWordsTotCharacters;
 
 
     public WordManager() {
@@ -38,9 +38,25 @@ public class WordManager {
     public void wordCounter(String userInput) {
         String [] arrayWithWords = userInput.trim().split("\\s+");
         totalWords += arrayWithWords.length;
+        longestWords(arrayWithWords);
     }
 
     public int getTotalWords() {
         return totalWords;
+    }
+
+    public void longestWords(String [] arrayWithWords) {
+        for (String currentWord : arrayWithWords){
+            if (currentWord.length() > longestWordsTotCharacters){
+                longestWordsTotCharacters = currentWord.length();
+                longestWords = currentWord;
+            }else if (currentWord.length() == longestWordsTotCharacters){
+                longestWords = longestWords +  ", " + currentWord.toLowerCase();
+            }
+        }
+    }
+
+    public String getLongestWords() {
+        return longestWords;
     }
 }
