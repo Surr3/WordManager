@@ -34,7 +34,7 @@ public class TestWordManager {
         assertEquals(expected, actual);
     }
 
-    /*@Test
+    @Test
     public void testWordCounter(){
         //Arrange
         WordManager wordManager = new WordManager();
@@ -46,20 +46,20 @@ public class TestWordManager {
 
         //Assert
         assertEquals(expected, actual);
-    }*/
+    }
 
-   /* @Test
+   @Test
     public void testLongestWord(){
         //Arrange
         WordManager wordManager = new WordManager();
         String expected = "attention, softaware";
 
         //Act
-        wordManager.longestWord("What do you call a software tester with high attention span? A softAWARE tester!");
+        wordManager.longestWords("What do you call a software tester with high attention span? A softAWARE tester!".split("\\s+"));
         String actual = wordManager.getLongestWords();
 
 
         //Assert
         assertEquals(expected, actual);
-    }*/
+    }
 }
