@@ -14,6 +14,7 @@ public class WordManager {
         boolean stop = true;
         if (!userInput.equalsIgnoreCase("stop")){
             totalLines++;
+            characterCounter(userInput);
             stop = false;
         }
         return stop;
@@ -21,5 +22,13 @@ public class WordManager {
 
     public int getTotalLines() {
         return totalLines;
+    }
+
+    public void characterCounter(String userInput) {
+        totalCharacter += userInput.length();
+    }
+
+    public int getTotalCharacters() {
+        return totalCharacter;
     }
 }

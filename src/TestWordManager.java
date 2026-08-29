@@ -19,7 +19,7 @@ public class TestWordManager {
         //Assert
         assertEquals(expected, actual);
     }
-/*
+
     @Test
     public void testCharacterCounter(){
         //Arrange
@@ -34,7 +34,7 @@ public class TestWordManager {
         assertEquals(expected, actual);
     }
 
-    @Test
+    /*@Test
     public void testWordCounter(){
         //Arrange
         WordManager wordManager = new WordManager();
@@ -46,9 +46,9 @@ public class TestWordManager {
 
         //Assert
         assertEquals(expected, actual);
-    }
+    }*/
 
-    @Test
+   /* @Test
     public void testLongestWord(){
         //Arrange
         WordManager wordManager = new WordManager();
