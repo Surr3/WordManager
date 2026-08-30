@@ -6,10 +6,6 @@ public class WordManager {
     private int longestWordsTotCharacters = 0;
     private String longestWords = "You didn't enter anything!";
 
-
-    public WordManager() {
-    }
-
     public boolean isStop(String userInput) {
         boolean stop = true;
 
@@ -52,7 +48,7 @@ public class WordManager {
             if (currentWord.length() > longestWordsTotCharacters) {
                 longestWordsTotCharacters = currentWord.length();
                 longestWords = "\"" + currentWord.toLowerCase() + "\"";
-            } else if (currentWord.length() == longestWordsTotCharacters && !currentWord.isEmpty()) {
+            } else if (currentWord.length() == longestWordsTotCharacters && !currentWord.isEmpty() && !longestWords.contains(currentWord)) {
                 longestWords = longestWords + ", " + "\"" + currentWord.toLowerCase() + "\"";
             }
         }
