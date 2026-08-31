@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 public class TestWordManager {
 
     @Test
-    public void givenFiveLines_countLinesShouldReturnFive() {
+    public void givenFiveInputs_getTotalLinesShouldReturnFive() {
 
         //Arrange
         WordManager wordManager = new WordManager();
@@ -23,7 +23,41 @@ public class TestWordManager {
     }
 
     @Test
-    public void givenNineCharacters_countCharactersShouldReturnNine() {
+    public void givenThreeEmptyInputs_getTotalLinesShouldReturnThree() {
+
+        //Arrange
+        WordManager wordManager = new WordManager();
+        int expected = 3;
+
+        //Act
+        wordManager.isNotStop("");
+        wordManager.isNotStop("");
+        wordManager.isNotStop("");
+
+        //Assert
+        assertEquals(expected, wordManager.getTotalLines());
+    }
+
+    @Test
+    public void givenStopAsFirstInput_shouldReturnZeroWithMessage() {
+
+        //Arrange
+        WordManager wordManager = new WordManager();
+        int expected = 0;
+        String expectedMessage = "You didn't enter anything!";
+
+        //Act
+        wordManager.isNotStop("stop");
+
+        //Assert
+        assertEquals(expected, wordManager.getTotalLines());
+        assertEquals(expected, wordManager.getTotalCharacters());
+        assertEquals(expected, wordManager.getTotalWords());
+        assertEquals(expectedMessage, wordManager.getLongestWords());
+    }
+
+    @Test
+    public void givenNineCharacters_getTotalCharactersShouldReturnNine() {
 
         //Arrange
         WordManager wordManager = new WordManager();
@@ -37,7 +71,7 @@ public class TestWordManager {
     }
 
     @Test
-    public void givenThreeWords_countWordsShouldReturnThree() {
+    public void givenThreeWords_getTotalWordsShouldReturnThree() {
 
         //Arrange
         WordManager wordManager = new WordManager();
@@ -51,7 +85,7 @@ public class TestWordManager {
     }
 
     @Test
-    public void givenOneLongestWord_findLongestWordsShouldReturnOne() {
+    public void givenOneLongestWord_findLongestWordsShouldReturnOneWord() {
 
         //Arrange
         WordManager wordManager = new WordManager();
@@ -65,7 +99,7 @@ public class TestWordManager {
     }
 
     @Test
-    public void givenMultipleLongestWords_findLongestWordsShouldReturnAll() {
+    public void givenMultipleLongestWords_findLongestWordsShouldReturnAllWords() {
 
         //Arrange
         WordManager wordManager = new WordManager();
@@ -79,7 +113,7 @@ public class TestWordManager {
     }
 
     @Test
-    public void givenDuplicateLongestWords_findLongestReturnsUniqueWords() {
+    public void givenDuplicateLongestWords_findLongestShouldReturnUniqueWords() {
 
         //Arrange
         WordManager wordManager = new WordManager();
