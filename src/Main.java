@@ -5,15 +5,15 @@ public class Main {
         WordManager wordManager = new WordManager();
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Please write a word or a text:");
+        System.out.print("Write a word/text (type \"stop\" to exit):\n> ");
         while (wordManager.isNotStop(scan.nextLine())) {
-            System.out.println("Please write another word:");
+            System.out.print("Write another word/text (\"stop\" to exit): \n> ");
         }
         scan.close();
 
-        System.out.println("Total characters: " + wordManager.getTotalCharacters());
-        System.out.println("Total lines: " + wordManager.getTotalLines());
-        System.out.println("Total words: " + wordManager.getTotalWords());
-        System.out.println("Longest word(s): " + wordManager.getLongestWords());
+        System.out.println("\nTotal characters:  " + wordManager.getTotalCharacters());
+        System.out.println("Total lines:       " + wordManager.getTotalLines());
+        System.out.println("Total words:       " + wordManager.getTotalWords());
+        System.out.println("Longest word(s):   " + wordManager.getLongestWords());
     }
 }
