@@ -51,6 +51,20 @@ public class TestWordManager {
     }
 
     @Test
+    public void givenOneLongestWord_findLongestWordsShouldReturnOne() {
+
+        //Arrange
+        WordManager wordManager = new WordManager();
+        String expected = "\"longest!\"";
+
+        //Act
+        wordManager.findLongestWords("Here we have a text were only one word is the longest!".split("\\s+"));
+
+        //Assert
+        assertEquals(expected, wordManager.getLongestWords());
+    }
+
+    @Test
     public void givenMultipleLongestWords_findLongestWordsShouldReturnAll() {
 
         //Arrange
