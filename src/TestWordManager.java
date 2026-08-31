@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 public class TestWordManager {
 
     @Test
-    public void testLineCounter() {
+    public void givenFiveLines_countLinesShouldReturnFive() {
 
         //Arrange
         WordManager wordManager = new WordManager();
@@ -23,42 +23,57 @@ public class TestWordManager {
     }
 
     @Test
-    public void testCharacterCounter() {
+    public void givenNineCharachters_countCharacterShouldReturnNine() {
 
         //Arrange
         WordManager wordManager = new WordManager();
         int expected = 9;
 
         //Act
-        wordManager.characterCounter("Count me!");
+        wordManager.countCharacters("Count me!");
 
         //Assert
         assertEquals(expected, wordManager.getTotalCharacters());
     }
 
     @Test
-    public void testWordCounter() {
+    public void givenThreeWords_countWordsShouldReturnThree() {
 
         //Arrange
         WordManager wordManager = new WordManager();
         int expected = 3;
 
         //Act
-        wordManager.wordCounter("Can you count?");
+        wordManager.countWords("Can you count?");
 
         //Assert
         assertEquals(expected, wordManager.getTotalWords());
     }
 
     @Test
-    public void testLongestWord() {
+    public void givenMultipleLongestWords_findLongestWordsShouldReturnAll() {
 
         //Arrange
         WordManager wordManager = new WordManager();
         String expected = "\"attention\", \"softaware\"";
 
         //Act
-        wordManager.longestWords("What do you call a software tester with high attention span? A softAWARE tester!".split("\\s+"));
+        wordManager.findLongestWords("What do you call a software tester with high attention span? A softAWARE tester!".split("\\s+"));
+
+        //Assert
+        assertEquals(expected, wordManager.getLongestWords());
+    }
+
+    @Test
+    public void givenDuplicatesOfLongestWords_findLongestWordsShouldReturnOneWord() {
+
+        //Arrange
+        WordManager wordManager = new WordManager();
+        String expected = "\"biggerword\"";
+
+        //Act
+        wordManager.findLongestWords("smallWord biggerWord".split("\\s+"));
+        wordManager.findLongestWords("smallWord biggerWord".split("\\s+"));
 
         //Assert
         assertEquals(expected, wordManager.getLongestWords());
