@@ -1,13 +1,11 @@
 public class WordManager {
-    private int totalCharacter;
-    private int totalLines;
-    private int totalWords;
 
+    private int totalCharacter, totalLines, totalWords;
     private int longestWordsTotCharacters = 0;
     private String longestWords = "You didn't enter anything!";
 
-    public boolean isStop(String userInput) {
-        boolean stop = true;
+    public boolean isNotStop(String userInput) {
+        boolean stop = false;
 
         if (!userInput.equalsIgnoreCase("stop")) {
             totalLines++;
@@ -15,7 +13,7 @@ public class WordManager {
                 characterCounter(userInput);
                 wordCounter(userInput);
             }
-            stop = false;
+            stop = true;
         }
 
         return stop;

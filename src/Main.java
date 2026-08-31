@@ -6,7 +6,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Please write a word or a text:");
-        while (!wordManager.isStop(scan.nextLine())) {
+        while (wordManager.isNotStop(scan.nextLine())) {
             System.out.println("Please write another word:");
         }
         scan.close();
