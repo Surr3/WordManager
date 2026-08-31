@@ -23,7 +23,7 @@ public class TestWordManager {
     }
 
     @Test
-    public void givenNineCharachters_countCharacterShouldReturnNine() {
+    public void givenNineCharacters_countCharactersShouldReturnNine() {
 
         //Arrange
         WordManager wordManager = new WordManager();
