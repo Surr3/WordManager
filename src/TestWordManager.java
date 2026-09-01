@@ -113,7 +113,7 @@ public class TestWordManager {
     }
 
     @Test
-    public void givenDuplicateLongestWords_findLongestShouldReturnUniqueWords() {
+    public void givenDuplicateLongestWords_findLongestWordsShouldReturnUniqueWords() {
 
         //Arrange
         WordManager wordManager = new WordManager();
