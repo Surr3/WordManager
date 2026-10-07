@@ -42,7 +42,9 @@ public class WordManager {
          * Blank spaces are not considered words.
          */
         String[] arrayWithWords = userInput.trim().split("\\s+");
-        totalWords += arrayWithWords.length;
+        if (!userInput.trim().isEmpty()) {
+            totalWords += arrayWithWords.length;
+        }
 
         //Uses the same array with words, as previous, to find the longest word(s).
         findLongestWords(arrayWithWords);

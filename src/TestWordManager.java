@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 public class TestWordManager {
 
     @Test
-    public void fiveNonEmptyLinesReturns5() {
+    public void fiveNonEmptyLinesReturns5Lines() {
 
         //Arrange
         WordManager wordManager = new WordManager();
@@ -23,7 +23,7 @@ public class TestWordManager {
     }
 
     @Test
-    public void threeEmptyLinesReturns3() {
+    public void threeEmptyLinesReturns3Lines() {
 
         //Arrange
         WordManager wordManager = new WordManager();
@@ -36,6 +36,21 @@ public class TestWordManager {
 
         //Assert
         assertEquals(expected, wordManager.getTotalLines());
+    }
+    @Test
+    public void blankInputReturns0Words() {
+
+        //Arrange
+        WordManager wordManager = new WordManager();
+        int expected = 0;
+
+        //Act
+        wordManager.isNotStop("");
+        wordManager.isNotStop("");
+        wordManager.isNotStop("");
+
+        //Assert
+        assertEquals(expected, wordManager.getTotalWords());
     }
 
     @Test
